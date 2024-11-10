@@ -21,6 +21,7 @@ import com.example.inventory.data.Item
 
 /**
  * ViewModel to retrieve all items in the Room database.
+ Kode ini mempersiapkan tempat untuk mengelola data dari Room namun belum ada bagian yang terhubung langsung dalam mengakses database Room. 
  */
 class HomeViewModel() : ViewModel() {
     companion object {
@@ -29,6 +30,8 @@ class HomeViewModel() : ViewModel() {
 }
 
 /**
- * Ui State for HomeScreen
+ * Ui State for HomeScreen.
+ List ini dapat diisi dengan data dari database Room
  */
 data class HomeUiState(val itemList: List<Item> = listOf())
+
