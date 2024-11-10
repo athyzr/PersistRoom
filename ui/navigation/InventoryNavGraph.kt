@@ -1,4 +1,4 @@
-/*
+ /*
  * Copyright (C) 2023 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,8 +33,7 @@ import com.example.inventory.ui.item.ItemEntryDestination
 import com.example.inventory.ui.item.ItemEntryScreen
 
 /**
- * Provides Navigation graph for the application.
- */
+Menyediakan navigasi untuk aplikasi NavHost dan NavController di jetpack compose. tidak ada interaksi langsung dengan Room atau akses data */
 @Composable
 fun InventoryNavHost(
     navController: NavHostController,
