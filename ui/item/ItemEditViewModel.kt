@@ -24,7 +24,9 @@ import androidx.lifecycle.ViewModel
 import com.example.inventory.data.ItemsRepository
 
 /**
- * ViewModel to retrieve and update an item from the [ItemsRepository]'s data source.
+ * berfungsi untuk mengambil dan memperbarui item dari sumber data (itemRepository)
+ juga dpat berfungsi untuk mengelola dataitem di database.
+ 
  */
 class ItemEditViewModel(
     savedStateHandle: SavedStateHandle,
@@ -38,6 +40,8 @@ class ItemEditViewModel(
 
     private val itemId: Int = checkNotNull(savedStateHandle[ItemEditDestination.itemIdArg])
 
+    /*itemUiState untuk menyimpan detail item yang diambil atau diubah. jika dihubungkan dengan room
+    item dapat deiperbarui dngan data dari database*/
     private fun validateInput(uiState: ItemDetails = itemUiState.itemDetails): Boolean {
         return with(uiState) {
             name.isNotBlank() && price.isNotBlank() && quantity.isNotBlank()
