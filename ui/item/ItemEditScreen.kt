@@ -35,6 +35,9 @@ import com.example.inventory.ui.AppViewModelProvider
 import com.example.inventory.ui.navigation.NavigationDestination
 import com.example.inventory.ui.theme.InventoryTheme
 
+/* tidak ada bagian yang lenagsung berinteraksi dengan room atau atabase.
+
+*/
 object ItemEditDestination : NavigationDestination {
     override val route = "item_edit"
     override val titleRes = R.string.edit_item_title
@@ -49,6 +52,9 @@ fun ItemEditScreen(
     onNavigateUp: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: ItemEditViewModel = viewModel(factory = AppViewModelProvider.Factory)
+    /* mmungkinkan data terkait item dikelola, termasuk pengambilan 
+    atau penyimpanan item kedaam database menggunakan room
+    */
 ) {
     Scaffold(
         topBar = {
@@ -63,7 +69,7 @@ fun ItemEditScreen(
         ItemEntryBody(
             itemUiState = viewModel.itemUiState,
             onItemValueChange = { },
-            onSaveClick = { },
+            onSaveClick = { }, /* dapat memanggil fungsi viewModel untuk meynimpan perubahan ke database room*/
             modifier = Modifier
                 .padding(
                     start = innerPadding.calculateStartPadding(LocalLayoutDirection.current),
