@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+/*Tidk ada interaksi langsung dengan room atau data.
+*/
 package com.example.inventory.ui.item
 
 import androidx.compose.foundation.layout.Arrangement
@@ -62,6 +64,8 @@ fun ItemEntryScreen(
     onNavigateUp: () -> Unit,
     canNavigateBack: Boolean = true,
     viewModel: ItemEntryViewModel = viewModel(factory = AppViewModelProvider.Factory)
+    /* dapat menyimpan data item ke room
+    */
 ) {
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
@@ -193,4 +197,7 @@ private fun ItemEntryScreenPreview() {
             )
         ), onItemValueChange = {}, onSaveClick = {})
     }
+
+
+    /* berfungsi untuk memasukkan dan menyimpan data item */
 }
