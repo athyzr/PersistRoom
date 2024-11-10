@@ -25,7 +25,8 @@ import com.example.inventory.data.ItemsRepository
 import java.text.NumberFormat
 
 /**
-viewModel berfungsi untuk validasi dan memasukkan item ke dalam room database */
+viewModel berfungsi untuk validasi dan memasukkan item ke dalam room database.
+ViewModel brinteraksi dngan database DAO dan memberikan data ke UI*/
 class ItemEntryViewModel(private val itemsRepository: ItemsRepository) : ViewModel() {
 
     /**
@@ -43,6 +44,7 @@ class ItemEntryViewModel(private val itemsRepository: ItemsRepository) : ViewMod
             ItemUiState(itemDetails = itemDetails, isEntryValid = validateInput(itemDetails))
     }
 
+    /*Menyisipkan item kedalam database room*/
     suspend fun saveItem() {
         if (validateInput()) {
             itemsRepository.insertItem(itemUiState.itemDetails.toItem())
@@ -50,6 +52,7 @@ class ItemEntryViewModel(private val itemsRepository: ItemsRepository) : ViewMod
         }
     }
 
+    /*memeriksa apakah variabel kosong. validateInput akan menggunakan fungsi untuk verifikasi input pengguna sebelum memperbarui entity dalam database*/
     private fun validateInput(uiState: ItemDetails = itemUiState.itemDetails): Boolean {
         return with(uiState) {
             name.isNotBlank() && price.isNotBlank() && quantity.isNotBlank()
@@ -77,7 +80,8 @@ data class ItemDetails(
  * not a valid [Double], then the price will be set to 0.0. Similarly if the value of
  * [ItemDetails.quantity] is not a valid [Int], then the quantity will be set to 0
  */
-fun ItemDetails.toItem(): Item = Item(
+fun ItemDetails.toItem(): Item = Item( 
+    /*Mengonversi obejk ImtemUiState UI jad entity Item*/
     id = id,
     name = name,
     price = price.toDoubleOrNull() ?: 0.0,
