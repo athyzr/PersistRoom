@@ -13,6 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+
+/* Kode ini tidak memiliki bagian yang terkait dengan Room atau data, kode ini hanya berisi kelas
+aktivitas utama aplikasi. kode ini lebih berfokus pada pengaturan tampilkan aplikasi dan tema.
+*/
 package com.example.inventory
 
 import android.os.Bundle
