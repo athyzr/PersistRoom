@@ -17,16 +17,13 @@
 package com.example.inventory.ui.navigation
 
 /**
- * Interface to describe the navigation destinations for the app
- */
+Interface untuk menjelaskan tujuan navigasi untuk aplikasi */
 interface NavigationDestination {
     /**
-     * Unique name to define the path for a composable
-     */
+    untuk pendefinisian jalur */
     val route: String
 
     /**
-     * String resource id to that contains title to be displayed for the screen.
-     */
+    ID sumber daya string yang berisi judul yang akan ditampilkan di layar tersebut.     */
     val titleRes: Int
 }
