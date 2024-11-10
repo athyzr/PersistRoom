@@ -60,7 +60,7 @@ object HomeDestination : NavigationDestination {
 }
 
 /**
- * Entry route for Home screen
+ * Kode ini berfungsi pada tmpilan daftar inventori, dan belum memiliki logika untuk mengambil atu menyimpan data menggunakan room. 
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
