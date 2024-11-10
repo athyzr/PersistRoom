@@ -21,7 +21,7 @@ import androidx.lifecycle.ViewModel
 import com.example.inventory.data.ItemsRepository
 
 /**
- * ViewModel to retrieve, update and delete an item from the [ItemsRepository]'s data source.
+ViewModel untuk mengambil, memperbarui, dan menghapus item dari sumber data (itemsRepository)
  */
 class ItemDetailsViewModel(
     savedStateHandle: SavedStateHandle
@@ -35,8 +35,7 @@ class ItemDetailsViewModel(
 }
 
 /**
- * UI state for ItemDetailsScreen
- */
+itemDetailsUiState didfinisikan sebagai data class untuk menyimpan status UI pada detail item */
 data class ItemDetailsUiState(
     val outOfStock: Boolean = true,
     val itemDetails: ItemDetails = ItemDetails()
