@@ -30,7 +30,8 @@ interface AppContainer {
  */
 class AppDataContainer(private val context: Context) : AppContainer {
     /**
-     * Implementation for [ItemsRepository]
+     * implementasi untuk ItemsRepository, instance database yang mneruskan
+     konteks lalu memanggil itemDao untuk membaut instance Dao
      */
     override val itemsRepository: ItemsRepository by lazy {
         OfflineItemsRepository(InventoryDatabase.getDatabase(context).itemDao())
