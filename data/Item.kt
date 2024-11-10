@@ -20,11 +20,14 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 /**
- * Entity data class represents a single row in the database.
+ * Mewakili entitiy database di aplikasi. class data utamanya digunakan untuk
+ menyimpan data di kotlin. 
  */
-@Entity(tableName = "items")
-data class Item(
-    @PrimaryKey(autoGenerate = true)
+@Entity(tableName = "items")/* anotasi pada class data. tableName untuk menetepkan items sebagai nama tabel SQLite*/
+data class Item(/*Keyowrd data untuk konversi jadi class data*/
+    @PrimaryKey(autoGenerate = true) /*primary key untuk identifikasi tiap catatan dalam tabel item secara unik*/
+    /*Semua parameter konstruktor utama harus berupa val atau var untuk memstikan konsistensi, 
+    serta class data tidak boleh berupa abstract, open atau sealed*/
     val id: Int = 0,
     val name: String,
     val price: Double,
