@@ -17,8 +17,8 @@
 package com.example.inventory.ui.navigation
 
 /**
- * Interface to describe the navigation destinations for the app
- */
+Interface untuk mntpakan tujuan navigasi dalam aplikasi, menyimpan nama rute unik dan menentukan ID resources untuk 
+judul layar*/
 interface NavigationDestination {
     /**
      * Unique name to define the path for a composable
