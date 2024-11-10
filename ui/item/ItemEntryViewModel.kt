@@ -25,8 +25,7 @@ import com.example.inventory.data.ItemsRepository
 import java.text.NumberFormat
 
 /**
- * ViewModel to validate and insert items in the Room database.
- */
+viewModel berfungsi untuk validasi dan memasukkan item ke dalam room database */
 class ItemEntryViewModel(private val itemsRepository: ItemsRepository) : ViewModel() {
 
     /**
@@ -47,6 +46,7 @@ class ItemEntryViewModel(private val itemsRepository: ItemsRepository) : ViewMod
     suspend fun saveItem() {
         if (validateInput()) {
             itemsRepository.insertItem(itemUiState.itemDetails.toItem())
+            /*menympan data item. data disimpan ke database melalui ItemRepository*/
         }
     }
 
@@ -58,8 +58,8 @@ class ItemEntryViewModel(private val itemsRepository: ItemsRepository) : ViewMod
 }
 
 /**
- * Represents Ui State for an Item.
- */
+membuat entity item. class entity menentukan tabel dan setiap instance 
+cla mewakili baris dalam database*/
 data class ItemUiState(
     val itemDetails: ItemDetails = ItemDetails(),
     val isEntryValid: Boolean = false
@@ -84,15 +84,16 @@ fun ItemDetails.toItem(): Item = Item(
     quantity = quantity.toIntOrNull() ?: 0
 )
 
-fun Item.formatedPrice(): String {
+fun Item.formatedPrice(): String { 
+    /*format harga yang biasanya dilakukan saat menampilkan database UI*/
     return NumberFormat.getCurrencyInstance().format(price)
 }
 
 /**
- * Extension function to convert [Item] to [ItemUiState]
+ * Fungsi ekstensi untuk mengonversi etitas Item
  */
 fun Item.toItemUiState(isEntryValid: Boolean = false): ItemUiState = ItemUiState(
-    itemDetails = this.toItemDetails(),
+    itemDetails = this.toItemDetails(), /*membuat data yang mengonversi entitas item ke database*/
     isEntryValid = isEntryValid
 )
 
