@@ -15,9 +15,10 @@
  */
 
 package com.example.inventory.data
-
+/*menyediakan entity get, insert, delete dan update dari database*/
 import kotlinx.coroutines.flow.Flow
 
+/*Parameter konstruktor jenis DAO*/
 class OfflineItemsRepository(private val itemDao: ItemDao) : ItemsRepository {
     override fun getAllItemsStream(): Flow<List<Item>> = itemDao.getAllItems()
 
