@@ -58,12 +58,18 @@ import com.example.inventory.data.Item
 import com.example.inventory.ui.navigation.NavigationDestination
 import com.example.inventory.ui.theme.InventoryTheme
 
+/* Kelas item digunakan sebagai objek data dan dapat disimpan di database room. tetapi disini 
+item hanya digunakan sebagai data yang ditampilkan di layar
+*/
 object ItemDetailsDestination : NavigationDestination {
     override val route = "item_details"
     override val titleRes = R.string.item_detail_title
     const val itemIdArg = "itemId"
     val routeWithArgs = "$route/{$itemIdArg}"
 }
+
+/* Tidak ada bagian kode yang terkait langsung dengan Room. 
+*/
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
