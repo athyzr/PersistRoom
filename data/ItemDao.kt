@@ -24,8 +24,10 @@ import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
+/*penerapan DAO (data access object) item di apliksai. ditnadai dengan anotasi @Dao*/
 @Dao
 interface ItemDao {
+    /*penyisipn item ke dalam database. rgumen onConflict untuk memberi tahu room apa yang harus dilakukan jika terjadi konflik*/
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(item: Item)
 
@@ -38,6 +40,8 @@ interface ItemDao {
     @Query("SELECT * from items WHERE id = :id")
     fun getItem(id: Int): Flow<Item>
 
+    /*dengan flow, perubahan dalam database akan diinformasikan melalui notifikasi. 
+    Room terus memperbarui Flow*/
     @Query("SELECT * from items ORDER BY name ASC")
     fun getAllItems(): Flow<List<Item>>
 }
