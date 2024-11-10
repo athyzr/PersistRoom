@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+/**  Pada bagian kode ini tidak ada bagian yang terkait langsung dengan Room atau database.
+Kode ini bertanggung jawab untuk inisialisasi objek AppContainer, yang digunakan untuk mengelola dependensi di seluruh aplikasi.
+*/
+
 package com.example.inventory
 
 import android.app.Application
