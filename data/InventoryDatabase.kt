@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+/*membuat instance database. class databse menentukan daftar entitu dan DO*/
+
 package com.example.inventory.data
 
 import android.content.Context
