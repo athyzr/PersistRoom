@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
+/*Mengimplmentasikan repositori*/
 package com.example.inventory.data
 
 import kotlinx.coroutines.flow.Flow
 
 /**
- * Repository that provides insert, update, delete, and retrieve of [Item] from a given data source.
- */
+penyedia entity get, insert, delete dan update dari database */
+
+/*fungsi berikut untuk pemetaan ke implementasi DAO*/
 interface ItemsRepository {
     /**
      * Retrieve all the items from the the given data source.
