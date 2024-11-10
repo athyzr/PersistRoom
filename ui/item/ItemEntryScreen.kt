@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-/*Tidk ada interaksi langsung dengan room atau data.
+/*Tidk ada interaksi langsung dengan room atau data Namun disini diluncurkan coroutine dan 
+memanggil saveItem untuk menyimpan data di dalam database Room.
 */
 package com.example.inventory.ui.item
 
