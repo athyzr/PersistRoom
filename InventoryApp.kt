@@ -33,7 +33,7 @@ import com.example.inventory.R.string
 import com.example.inventory.ui.navigation.InventoryNavHost
 
 /**
- * Top level composable that represents screens for the application.
+ * Kode ini berfokus pada komponen tampilan yang menggunakan jetpack compose (InventoryApp dan InventoryTopAppBar)
  */
 @Composable
 fun InventoryApp(navController: NavHostController = rememberNavController()) {
