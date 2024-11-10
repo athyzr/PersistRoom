@@ -21,12 +21,15 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+/*class abstract yang memeperluas RoomDatabasse*/
 @Database(entities = [Item::class], version = 1, exportSchema = false)
 abstract class InventoryDatabase : RoomDatabase() {
 
     abstract fun itemDao(): ItemDao
 
     companion object {
+        /*voltile memastikan nilai variabel yang tidak stabil tidak pernah disimpan dalam cache. 
+        membantu memastikan nilai instance selalu tebaru*/
         @Volatile
         private var Instance: InventoryDatabase? = null
 
@@ -35,6 +38,8 @@ abstract class InventoryDatabase : RoomDatabase() {
             return Instance ?: synchronized(this) {
                 Room.databaseBuilder(context, InventoryDatabase::class.java, "item_database")
                     .build().also { Instance = it }
+                    /*variabel instance akan menyimpan referensi ke databasse ketik salah satunya telah dibuat.
+                berfungsi untuk mempertahankan satu instance dari database yang dibuka */
             }
         }
     }
